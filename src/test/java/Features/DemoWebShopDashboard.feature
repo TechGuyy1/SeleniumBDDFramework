@@ -12,16 +12,14 @@
 
     Scenario Outline: Verify that the user is able register
       Given  User navigate to the demoweb shop
-      Then User clicks on the registration option
-      And User select the gender "<gender>"
-      And User enters the first name, last name, and email "<firstname>","<lastname>","<email>"
-      And User enters the password and confirm password
+      Then User clicks on the register button, registration page displayed
+      And User select the gender and enters the first name, last name, email, password and confirm password "<firstname>","<lastname>","<email>" "<password>" "<confirmPass>"
       And User clicks on register button
-      Then Verify that success message "Registration completed" is displayed
+      And Verify success message for registration
 
 Examples:
-      |TestName                 |gender|firstname|lastname|email      |password |
-      | Register functionality  | Male |Pavan    |  Kumar |test@gmail |test@123#|
+      |setRegistrationPage                 |firstname|lastname|email                     |password | confirmPass
+      |Register functionality              |Kiran    |  Sutar |kiranrsutar8347@gmail.com |test@123 | test@123
 
 
 
